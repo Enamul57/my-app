@@ -7,7 +7,8 @@ class App extends Component{
     super();
     this.state = {
       monsters: [],
-      searchFields: " "
+      searchFields: " ",
+      title : ""
     };
   }
   componentDidMount(){
@@ -20,10 +21,9 @@ render(){
   
    const {monsters,searchFields} = this.state;
    //if searchfield empty it returns monster,if has any letter than returns the match result(something /nothing)
-   const filterMonster = monsters.filter(monster =>
-     monster.name.toLowerCase().includes(searchFields.toLowerCase())
-  ); 
- console.log(filterMonster);
+    const filterMonster = monsters.filter(monster =>
+      monster.name.toLowerCase().includes(searchFields.toLowerCase())
+   ); 
   return (
     <div className='App'>
       <h1>Monster Rolodex</h1>
